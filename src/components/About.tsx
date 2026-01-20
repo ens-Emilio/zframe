@@ -15,6 +15,8 @@ import {
     IconHandMove,
     IconDevices,
     IconX,
+    IconArrowsUpDown,
+    IconCheck,
 } from '@tabler/icons-react';
 
 interface AboutProps {
@@ -137,15 +139,15 @@ export function About({ onClose }: AboutProps) {
                             <div className="arch-layer">
                                 <div className="arch-box">📄 tasks.json / TASKS.md</div>
                             </div>
-                            <div className="arch-arrow">↕️</div>
+                            <div className="arch-arrow"><IconArrowsUpDown size={24} stroke={1.5} /></div>
                             <div className="arch-layer">
                                 <div className="arch-box">🔌 Adapters (JSON/Markdown)</div>
                             </div>
-                            <div className="arch-arrow">↕️</div>
+                            <div className="arch-arrow"><IconArrowsUpDown size={24} stroke={1.5} /></div>
                             <div className="arch-layer">
                                 <div className="arch-box">🧠 Core Domain (Board, Task, Column)</div>
                             </div>
-                            <div className="arch-arrow">↕️</div>
+                            <div className="arch-arrow"><IconArrowsUpDown size={24} stroke={1.5} /></div>
                             <div className="arch-layer">
                                 <div className="arch-box">⚛️ React UI (Glassmorphism)</div>
                             </div>
@@ -197,27 +199,27 @@ export function About({ onClose }: AboutProps) {
                             <tbody>
                                 <tr>
                                     <td>Chrome 86+</td>
-                                    <td className="compat-yes">✅</td>
+                                    <td className="compat-yes"><IconCheck size={18} stroke={2} /></td>
                                     <td>Leitura/Escrita</td>
                                 </tr>
                                 <tr>
                                     <td>Edge 86+</td>
-                                    <td className="compat-yes">✅</td>
+                                    <td className="compat-yes"><IconCheck size={18} stroke={2} /></td>
                                     <td>Leitura/Escrita</td>
                                 </tr>
                                 <tr>
                                     <td>Opera 72+</td>
-                                    <td className="compat-yes">✅</td>
+                                    <td className="compat-yes"><IconCheck size={18} stroke={2} /></td>
                                     <td>Leitura/Escrita</td>
                                 </tr>
                                 <tr>
                                     <td>Firefox</td>
-                                    <td className="compat-no">❌</td>
+                                    <td className="compat-no"><IconX size={18} stroke={2} /></td>
                                     <td>Download/Upload</td>
                                 </tr>
                                 <tr>
                                     <td>Safari</td>
-                                    <td className="compat-no">❌</td>
+                                    <td className="compat-no"><IconX size={18} stroke={2} /></td>
                                     <td>Download/Upload</td>
                                 </tr>
                             </tbody>
