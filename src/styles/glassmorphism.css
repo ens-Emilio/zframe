@@ -1,0 +1,286 @@
+/**
+ * Glassmorphism Utility Classes
+ */
+
+/* === Glass Panels === */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+}
+
+.glass-panel-elevated {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--glass-shadow-hover);
+}
+
+/* === Glass Cards === */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal),
+        background var(--transition-fast);
+}
+
+.glass-card:hover {
+    background: var(--glass-bg-hover);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.glass-card.dragging {
+    transform: rotate(3deg) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+/* === Glass Buttons === */
+.glass-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.glass-button:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-focus);
+    transform: translateY(-1px);
+}
+
+.glass-button:active {
+    transform: translateY(0);
+}
+
+.glass-button.primary {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+}
+
+.glass-button.primary:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+}
+
+.glass-button.icon-only {
+    padding: var(--space-2);
+    width: 36px;
+    height: 36px;
+}
+
+/* === Glass Input === */
+.glass-input {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    transition: all var(--transition-fast);
+}
+
+.glass-input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.glass-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-accent-subtle);
+}
+
+/* === Glass Textarea === */
+.glass-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: var(--space-3) var(--space-4);
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    resize: vertical;
+    transition: all var(--transition-fast);
+}
+
+.glass-textarea::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.glass-textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-accent-subtle);
+}
+
+/* === Glass Modal === */
+.glass-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    padding: var(--space-4);
+    animation: fadeIn 200ms ease;
+}
+
+.glass-modal {
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: rgba(30, 30, 45, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+    animation: slideUp 250ms ease;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* === Tags / Badges === */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-1) var(--space-2);
+    background: var(--color-accent-subtle);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-accent);
+}
+
+.priority-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+}
+
+.priority-badge.p1 {
+    background: hsla(0, 85%, 60%, 0.2);
+    color: var(--color-priority-p1);
+}
+
+.priority-badge.p2 {
+    background: hsla(35, 90%, 55%, 0.2);
+    color: var(--color-priority-p2);
+}
+
+.priority-badge.p3 {
+    background: hsla(200, 80%, 55%, 0.2);
+    color: var(--color-priority-p3);
+}
+
+.priority-badge.p4 {
+    background: hsla(230, 15%, 50%, 0.2);
+    color: var(--color-priority-p4);
+}
+
+/* === Empty State === */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    padding: var(--space-12);
+    text-align: center;
+    color: var(--color-text-tertiary);
+}
+
+.empty-state-icon {
+    font-size: 48px;
+    opacity: 0.5;
+}
+
+.empty-state-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+}
+
+.empty-state-description {
+    font-size: var(--font-size-sm);
+    max-width: 300px;
+}
