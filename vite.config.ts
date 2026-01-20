@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/zframe/',
   plugins: [
     react(),
     VitePWA({
@@ -17,7 +18,7 @@ export default defineConfig({
         background_color: '#1a1a2e',
         display: 'standalone',
         orientation: 'any',
-        start_url: '/',
+        start_url: '/zframe/',
         icons: [
           {
             src: 'pwa-192x192.png',
